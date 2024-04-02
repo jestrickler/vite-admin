@@ -1,4 +1,4 @@
-import Header from './Header.jsx'
+import { Header } from './Header.jsx'
 
 const Line = () => {
   return <Header title='Line Chart' subtitle='Simple Line Chart' />

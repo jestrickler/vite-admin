@@ -1,6 +1,86 @@
-import Header from './Header.jsx'
+import { Suspense } from 'react'
+import { Helmet } from 'react-helmet'
+import { Header } from './Header.jsx'
+import { Await, defer, useLoaderData } from 'react-router-dom'
+import { Box, Chip, Skeleton } from '@mui/material'
+import { DataGrid } from '@mui/x-data-grid/DataGrid'
+import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined'
+import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
+import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined'
+import { mockDataTeam } from '../data/mockData.js'
 
-const Team = () => {
-  return <Header title='Team' subtitle='Managing the Team Members' />
+const getData = async () => {
+  await new Promise((r) => setTimeout(r, 1000))
+  return mockDataTeam
 }
-export default Team
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const loader = async () => defer({ data: getData() })
+
+const columns = [
+  { field: 'name', headerName: 'Name', flex: 2 },
+  { field: 'phone', headerName: 'Phone', flex: 2 },
+  { field: 'email', headerName: 'Email', flex: 2 },
+  {
+    field: 'access',
+    headerName: 'Access',
+    flex: 1,
+    renderCell: ({ row: { access } }) => (
+      <Chip
+        label={access}
+        icon={
+          access === 'admin' ? (
+            <AdminPanelSettingsOutlinedIcon />
+          ) : access === 'manager' ? (
+            <SecurityOutlinedIcon />
+          ) : (
+            <LockOpenOutlinedIcon />
+          )
+        }
+        color='primary'
+        sx={{
+          width: '100%',
+          backgroundColor:
+            access === 'admin'
+              ? 'primary.dark'
+              : access === 'manager'
+                ? 'primary.main'
+                : 'primary.light',
+          fontSize: 'h4.fontSize'
+        }}
+      />
+    )
+  }
+]
+
+export const Component = () => {
+  let deferred = useLoaderData()
+
+  return (
+    <>
+      <Helmet>
+        <title>Team Management - Adminis </title>
+      </Helmet>
+      <Header title='Team' subtitle='Managing the Team Members' />
+      <Box m={2}>
+        <Suspense
+          fallback={
+            <Skeleton variant='rectangular' width='100%' height={580} />
+          }
+        >
+          <Await resolve={deferred.data}>
+            {(data) => (
+              <DataGrid
+                rows={data}
+                columns={columns}
+                sx={{ fontSize: 'h4.fontSize' }}
+              />
+            )}
+          </Await>
+        </Suspense>
+      </Box>
+    </>
+  )
+}
+
+Component.displayName = 'Team'

@@ -1,4 +1,4 @@
-import Header from './Header.jsx'
+import { Header } from './Header.jsx'
 
 const Pie = () => {
   return <Header title='Pie Chart' subtitle='Simple Pie Chart' />

@@ -1,4 +1,4 @@
-import Header from './Header.jsx'
+import { Header } from './Header.jsx'
 
 const Profile = () => {
   return <Header title='Create Profile' subtitle='Create a New User Profile' />

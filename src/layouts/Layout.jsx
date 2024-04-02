@@ -1,10 +1,10 @@
 import { Box, Button, CssBaseline, ThemeProvider } from '@mui/material'
 import { ColorModeContext, useMode } from '../theme.js'
 import { Outlet } from 'react-router-dom'
-import Toolbar from './Toolbar.jsx'
-import Sidebar from './Sidebar.jsx'
+import { Toolbar } from './Toolbar.jsx'
+import { Sidebar } from './Sidebar.jsx'
 
-function Layout() {
+const Layout = () => {
   const [theme, colorMode] = useMode()
 
   return (
@@ -31,7 +31,7 @@ function Layout() {
           <Sidebar />
           <Box width='100%'>
             <Toolbar />
-            <Box component='main' id='main-content' width='100%'>
+            <Box component='main' id='main-content' width='100%' px={3}>
               <Outlet />
             </Box>
           </Box>
@@ -41,4 +41,4 @@ function Layout() {
   )
 }
 
-export default Layout
+export { Layout }

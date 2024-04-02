@@ -190,4 +190,4 @@ const Sidebar = () => {
     </ProSidebar>
   )
 }
-export default Sidebar
+export { Sidebar }

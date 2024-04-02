@@ -9,6 +9,8 @@ Currently, two official plugins are available:
 
 node v21.4.0 (npm v10.2.4)
 
-loosely follows 
+loosely follows
+
 https://www.youtube.com/watch?v=wYpCWwD1oz0
+
 https://github.com/ed-roh/react-admin-dashboard

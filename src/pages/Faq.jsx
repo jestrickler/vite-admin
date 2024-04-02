@@ -1,4 +1,4 @@
-import Header from './Header.jsx'
+import { Header } from './Header.jsx'
 
 const Faq = () => {
   return <Header title='FAQ' subtitle='Frequently Asked Questions Page' />

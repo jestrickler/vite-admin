@@ -1,11 +1,11 @@
 import { Suspense } from 'react'
-import { Await, defer, useLoaderData } from 'react-router-dom'
-import Header from './Header.jsx'
-import { Box, Button, Skeleton, Typography } from '@mui/material'
 import { Helmet } from 'react-helmet'
+import { Header } from './Header.jsx'
+import { Box, Skeleton, Typography } from '@mui/material'
+import { Await, defer, useLoaderData } from 'react-router-dom'
 
 const getData = async () => {
-  await new Promise((r) => setTimeout(r, 3000))
+  await new Promise((r) => setTimeout(r, 1000))
   return 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eveniet fugiat in iste laboriosam neque nostrum perspiciatis similique? Architecto ducimus earum ipsam iure, minima non odit omnis porro quae rerum.'
 }
 
@@ -21,7 +21,6 @@ export const Component = () => {
         <title>Dashboard - Adminis </title>
       </Helmet>
       <Header title='Dashboard' subtitle='Welcome to your dashboard' />
-      <Button>Focus</Button>
       <Box m={2}>
         <Suspense
           fallback={<Skeleton variant='rectangular' width='100%' height={50} />}

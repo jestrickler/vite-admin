@@ -1,4 +1,4 @@
-import Header from './Header.jsx'
+import { Header } from './Header.jsx'
 
 const Contacts = () => {
   return <Header title='Contacts' subtitle='Your Contacts' />
