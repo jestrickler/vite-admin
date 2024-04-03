@@ -61,7 +61,7 @@ export const Component = () => {
       <Helmet>
         <title>Team Management - Adminis </title>
       </Helmet>
-      <Header title='Team' subtitle='Managing the Team Members' />
+      <Header title='Team' subtitle='Manage the Team Members' />
       <Box mt={3}>
         <Suspense
           fallback={

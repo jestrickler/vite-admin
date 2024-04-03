@@ -9,7 +9,6 @@ import {
 
 import { Layout } from './layouts/Layout.jsx'
 import './index.css'
-import Contacts from './pages/Contacts.jsx'
 import Invoices from './pages/Invoices.jsx'
 import Profile from './pages/Profile.jsx'
 import Bar from './pages/Bar.jsx'
@@ -24,7 +23,7 @@ const router = createBrowserRouter(
     <Route path='/' element={<Layout />}>
       <Route index lazy={() => import('./pages/Dashboard.jsx')} />
       <Route path='team' lazy={() => import('./pages/Team.jsx')} />
-      <Route path='contacts' element={<Contacts />} />
+      <Route path='contacts' lazy={() => import('./pages/Contacts.jsx')} />
       <Route path='invoices' element={<Invoices />} />
       <Route path='profile' element={<Profile />} />
       <Route path='bar' element={<Bar />} />

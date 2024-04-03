@@ -26,7 +26,7 @@ export const mockDataTeam = [
   {
     id: 4,
     name: 'Arya Stark',
-    email: 'anyastark@gmail.com',
+    email: 'aryastark@gmail.com',
     age: 16,
     phone: '(921)425-6742',
     access: 'admin'
@@ -80,8 +80,9 @@ export const mockDataContacts = [
     email: 'jonsnow@gmail.com',
     age: 35,
     phone: '(665)121-5454',
-    address: '0912 Won Street, Alabama, SY 10001',
+    address: '0912 Won Street',
     city: 'New York',
+    state: 'NY',
     zipCode: '10001',
     registrarId: 123512
   },
@@ -91,8 +92,9 @@ export const mockDataContacts = [
     email: 'cerseilannister@gmail.com',
     age: 42,
     phone: '(421)314-2288',
-    address: '1234 Main Street, New York, NY 10001',
+    address: '1234 Main Street',
     city: 'New York',
+    state: 'NY',
     zipCode: '13151',
     registrarId: 123512
   },
@@ -102,8 +104,9 @@ export const mockDataContacts = [
     email: 'jaimelannister@gmail.com',
     age: 45,
     phone: '(422)982-6739',
-    address: '3333 Want Blvd, Estanza, NAY 42125',
+    address: '3333 Want Blvd',
     city: 'New York',
+    state: 'NY',
     zipCode: '87281',
     registrarId: 4132513
   },
@@ -113,8 +116,9 @@ export const mockDataContacts = [
     email: 'anyastark@gmail.com',
     age: 16,
     phone: '(921)425-6742',
-    address: '1514 Main Street, New York, NY 22298',
+    address: '1514 Main Street',
     city: 'New York',
+    state: 'NY',
     zipCode: '15551',
     registrarId: 123512
   },
@@ -124,8 +128,9 @@ export const mockDataContacts = [
     email: 'daenerystargaryen@gmail.com',
     age: 31,
     phone: '(421)445-1189',
-    address: '11122 Welping Ave, Tenting, CD 21321',
+    address: '11122 Welping Ave',
     city: 'Tenting',
+    state: 'CD',
     zipCode: '14215',
     registrarId: 123512
   },
@@ -135,8 +140,9 @@ export const mockDataContacts = [
     email: 'evermelisandre@gmail.com',
     age: 150,
     phone: '(232)545-6483',
-    address: '1234 Canvile Street, Esvazark, NY 10001',
+    address: '1234 Canvile Street',
     city: 'Esvazark',
+    state: 'NY',
     zipCode: '10001',
     registrarId: 123512
   },
@@ -146,8 +152,9 @@ export const mockDataContacts = [
     email: 'ferraraclifford@gmail.com',
     age: 44,
     phone: '(543)124-0123',
-    address: '22215 Super Street, Everting, ZO 515234',
+    address: '22215 Super Street',
     city: 'Evertin',
+    state: 'ZO',
     zipCode: '51523',
     registrarId: 123512
   },
@@ -157,8 +164,9 @@ export const mockDataContacts = [
     email: 'rossinifrances@gmail.com',
     age: 36,
     phone: '(222)444-5555',
-    address: '4123 Ever Blvd, Wentington, AD 142213',
+    address: '4123 Ever Blvd',
     city: 'Esteras',
+    state: 'AD',
     zipCode: '44215',
     registrarId: 512315
   },
@@ -168,8 +176,9 @@ export const mockDataContacts = [
     email: 'harveyroxie@gmail.com',
     age: 65,
     phone: '(444)555-6239',
-    address: '51234 Avery Street, Cantory, ND 212412',
+    address: '51234 Avery Street',
     city: 'Colunza',
+    state: 'ND',
     zipCode: '111234',
     registrarId: 928397
   },
@@ -179,8 +188,9 @@ export const mockDataContacts = [
     email: 'enteriredack@gmail.com',
     age: 42,
     phone: '(222)444-5555',
-    address: '4123 Easer Blvd, Wentington, AD 142213',
+    address: '4123 Easer Blvd',
     city: 'Esteras',
+    state: 'AD',
     zipCode: '44215',
     registrarId: 533215
   },
@@ -190,8 +200,9 @@ export const mockDataContacts = [
     email: 'stevegoodmane@gmail.com',
     age: 11,
     phone: '(444)555-6239',
-    address: '51234 Fiveton Street, CunFory, ND 212412',
+    address: '51234 Fiveton Street',
     city: 'Colunza',
+    state: 'ND',
     zipCode: '1234',
     registrarId: 92197
   }
