@@ -62,7 +62,7 @@ export const Component = () => {
         <title>Team Management - Adminis </title>
       </Helmet>
       <Header title='Team' subtitle='Managing the Team Members' />
-      <Box m={2}>
+      <Box mt={3}>
         <Suspense
           fallback={
             <Skeleton variant='rectangular' width='100%' height={580} />

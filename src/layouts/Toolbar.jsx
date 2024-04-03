@@ -14,7 +14,7 @@ const Toolbar = () => {
   const colorMode = useContext(ColorModeContext)
 
   return (
-    <Box display='flex' justifyContent='space-between' p={2}>
+    <Box display='flex' justifyContent='space-between'>
       {/* SEARCH BAR */}
       <Box display='flex' backgroundColor='background.accent' borderRadius={1}>
         <InputBase

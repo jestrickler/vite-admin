@@ -17,11 +17,9 @@ const Layout = () => {
             position: 'absolute',
             left: -9999,
             'z-index': 999,
-            // opacity: 0,
             '&:focus': {
               left: '50%',
               transform: 'translateX(-50%)'
-              // opacity: 1
             }
           }}
         >
@@ -29,9 +27,9 @@ const Layout = () => {
         </Button>
         <Box display='flex' height='100%'>
           <Sidebar />
-          <Box width='100%'>
+          <Box width='100%' p={2}>
             <Toolbar />
-            <Box component='main' id='main-content' width='100%' px={3}>
+            <Box component='main' id='main-content' width='100%' pt={2}>
               <Outlet />
             </Box>
           </Box>

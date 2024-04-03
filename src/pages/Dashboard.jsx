@@ -21,7 +21,7 @@ export const Component = () => {
         <title>Dashboard - Adminis </title>
       </Helmet>
       <Header title='Dashboard' subtitle='Welcome to your dashboard' />
-      <Box m={2}>
+      <Box mt={3}>
         <Suspense
           fallback={<Skeleton variant='rectangular' width='100%' height={50} />}
         >
