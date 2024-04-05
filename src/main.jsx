@@ -6,11 +6,8 @@ import {
   createRoutesFromElements,
   Route
 } from 'react-router-dom'
-
 import { Layout } from './layouts/Layout.jsx'
 import './index.css'
-import Invoices from './pages/Invoices.jsx'
-import Profile from './pages/Profile.jsx'
 import Bar from './pages/Bar.jsx'
 import Pie from './pages/Pie.jsx'
 import Line from './pages/Line.jsx'
@@ -24,8 +21,8 @@ const router = createBrowserRouter(
       <Route index lazy={() => import('./pages/Dashboard.jsx')} />
       <Route path='team' lazy={() => import('./pages/Team.jsx')} />
       <Route path='contacts' lazy={() => import('./pages/Contacts.jsx')} />
-      <Route path='invoices' element={<Invoices />} />
-      <Route path='profile' element={<Profile />} />
+      <Route path='invoices' lazy={() => import('./pages/Invoices.jsx')} />
+      <Route path='profile' lazy={() => import('./pages/Profile.jsx')} />
       <Route path='bar' element={<Bar />} />
       <Route path='pie' element={<Pie />} />
       <Route path='line' element={<Line />} />

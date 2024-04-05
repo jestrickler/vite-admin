@@ -36,7 +36,7 @@ export const themeSettings = (mode) => {
     },
     typography: {
       fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-      fontSize: 12,
+      // fontSize: 12,
       h1: {
         fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
         fontSize: 40
@@ -55,11 +55,11 @@ export const themeSettings = (mode) => {
       },
       h5: {
         fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-        fontSize: 16
+        fontSize: 18
       },
       h6: {
         fontFamily: ['Source Sans Pro', 'sans-serif'].join(','),
-        fontSize: 14
+        fontSize: 16
       }
     }
   }
