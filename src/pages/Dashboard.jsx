@@ -18,7 +18,7 @@ export const Component = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard - Adminis </title>
+        <title>Dashboard - Adminis</title>
       </Helmet>
       <Header title='Dashboard' subtitle='Welcome to your dashboard' />
       <Box mt={3}>

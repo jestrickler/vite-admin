@@ -69,9 +69,9 @@ export const Component = () => {
   return (
     <>
       <Helmet>
-        <title>Create Profile - Adminis </title>
+        <title>User Profile - Adminis</title>
       </Helmet>
-      <Header title='Create Profile' subtitle='Create a New User Profile' />
+      <Header title='User Profile' subtitle='Create a New User Profile' />
       <Box mt={3}>
         {Object.keys(errors).length > 0 && (
           <Alert severity='error' sx={{ mb: 2 }}>

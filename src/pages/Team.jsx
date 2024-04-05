@@ -59,9 +59,9 @@ export const Component = () => {
   return (
     <>
       <Helmet>
-        <title>Team Management - Adminis </title>
+        <title>Team - Adminis</title>
       </Helmet>
-      <Header title='Team' subtitle='Manage the Team Members' />
+      <Header title='Team' subtitle='Manage Your Team Members' />
       <Box mt={3}>
         <Suspense
           fallback={

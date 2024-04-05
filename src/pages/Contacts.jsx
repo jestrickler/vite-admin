@@ -39,7 +39,7 @@ export const Component = () => {
   return (
     <>
       <Helmet>
-        <title>Contacts Management - Adminis </title>
+        <title>Contacts - Adminis</title>
       </Helmet>
       <Header title='Contacts' subtitle='Manage Your Contacts' />
       <Box mt={3}>

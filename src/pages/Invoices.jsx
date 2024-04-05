@@ -33,7 +33,7 @@ export const Component = () => {
   return (
     <>
       <Helmet>
-        <title>Invoice Balances - Adminis </title>
+        <title>Invoices - Adminis</title>
       </Helmet>
       <Header title='Invoices' subtitle='List of Invoice Balances' />
       <Box mt={3}>
