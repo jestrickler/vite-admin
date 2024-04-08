@@ -112,8 +112,8 @@ export const mockDataContacts = [
   },
   {
     id: 4,
-    name: 'Anya Stark',
-    email: 'anyastark@gmail.com',
+    name: 'Arya Stark',
+    email: 'aryastark@gmail.com',
     age: 16,
     phone: '(921)425-6742',
     address: '1514 Main Street',
@@ -235,8 +235,8 @@ export const mockDataInvoices = [
   },
   {
     id: 4,
-    name: 'Anya Stark',
-    email: 'anyastark@gmail.com',
+    name: 'Arya Stark',
+    email: 'aryastark@gmail.com',
     cost: '80.55',
     phone: '(921)425-6742',
     date: '03/21/2022'
