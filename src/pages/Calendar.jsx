@@ -7,6 +7,7 @@ import {
   ListItem,
   ListItemText,
   Skeleton,
+  Stack,
   Typography
 } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
@@ -75,7 +76,10 @@ export const Component = () => {
       <Box mt={3}>
         <Suspense
           fallback={
-            <Skeleton variant='rectangular' width='100%' height={600} />
+            <Stack direction='row' spacing={2}>
+              <Skeleton variant='rectangular' width='21%' height={600} />
+              <Skeleton variant='rectangular' width='100%' height={600} />
+            </Stack>
           }
         >
           <Await resolve={deferred.data}>

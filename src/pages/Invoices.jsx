@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import { Await, defer, useLoaderData } from 'react-router-dom'
-import { Box, Skeleton, Typography } from '@mui/material'
+import { Box, Skeleton, Stack, Typography } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid/DataGrid'
 import { mockDataInvoices } from '../data/mockData.js'
 
@@ -39,7 +39,16 @@ export const Component = () => {
       <Box mt={3}>
         <Suspense
           fallback={
-            <Skeleton variant='rectangular' width='100%' height={580} />
+            <Stack spacing={1}>
+              {[...Array(10).keys()].map((item) => (
+                <Skeleton
+                  key={item}
+                  variant='rectangular'
+                  width='100%'
+                  height={50}
+                />
+              ))}
+            </Stack>
           }
         >
           <Await resolve={deferred.data}>
