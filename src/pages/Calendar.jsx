@@ -77,8 +77,8 @@ export const Component = () => {
         <Suspense
           fallback={
             <Stack direction='row' spacing={2}>
-              <Skeleton variant='rectangular' width='21%' height={600} />
-              <Skeleton variant='rectangular' width='100%' height={600} />
+              <Skeleton variant='rectangular' width='21%' height={660} />
+              <Skeleton variant='rectangular' width='100%' height={660} />
             </Stack>
           }
         >
