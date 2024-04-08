@@ -72,7 +72,7 @@ export const Component = () => {
             {(data) =>
               data.map((item) => (
                 <Accordion key={item.id} defaultExpanded>
-                  <AccordionSummary expandIcon={<ExpandMore />}>
+                  <AccordionSummary expandIcon={<ExpandMore />} sx={{ px: 0 }}>
                     <Typography
                       variant='h4'
                       component='div'
@@ -81,7 +81,7 @@ export const Component = () => {
                       {item.q}
                     </Typography>
                   </AccordionSummary>
-                  <AccordionDetails>
+                  <AccordionDetails sx={{ px: 0 }}>
                     <Typography>{item.a}</Typography>
                   </AccordionDetails>
                 </Accordion>
