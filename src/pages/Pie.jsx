@@ -1,12 +1,14 @@
 import { Suspense } from 'react'
 import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
-import { Box, Skeleton, Typography } from '@mui/material'
+import { Box, Skeleton } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
+import { PieChart } from '../components/PieChart.jsx'
+import { mockPieData } from '../data/mockData.js'
 
 const getData = async () => {
   await new Promise((r) => setTimeout(r, 1000))
-  return 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eveniet fugiat in iste laboriosam neque nostrum perspiciatis similique? Architecto ducimus earum ipsam iure, minima non odit omnis porro quae rerum.'
+  return mockPieData
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -23,10 +25,24 @@ export const Component = () => {
       <Header title='Pie Chart' subtitle='Simple Pie Chart' />
       <Box mt={3}>
         <Suspense
-          fallback={<Skeleton variant='rectangular' width='100%' height={50} />}
+          fallback={
+            <Box
+              width='100%'
+              height='75vh'
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
+            >
+              <Skeleton variant='circular' width={600} height={600} />
+            </Box>
+          }
         >
           <Await resolve={deferred.data}>
-            {(data) => <Typography>{data}</Typography>}
+            {(data) => (
+              <Box height='75vh'>
+                <PieChart data={data} />
+              </Box>
+            )}
           </Await>
         </Suspense>
       </Box>
@@ -34,4 +50,4 @@ export const Component = () => {
   )
 }
 
-Component.displayName = 'Dashboard'
+Component.displayName = 'Bar'
