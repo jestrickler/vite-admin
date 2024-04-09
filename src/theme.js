@@ -17,7 +17,8 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: '#141b2d',
-              accent: '#37474f'
+              accent: '#37474f',
+              contrast: '#e0e0e0'
             }
           }
         : {
@@ -30,7 +31,8 @@ export const themeSettings = (mode) => {
             },
             background: {
               default: '#fcfcfc',
-              accent: '#eeeeee'
+              accent: '#eeeeee',
+              contrast: '#141414'
             }
           })
     },

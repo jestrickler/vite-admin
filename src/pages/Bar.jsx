@@ -1,12 +1,14 @@
 import { Suspense } from 'react'
 import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
-import { Box, Skeleton, Typography } from '@mui/material'
+import { Box, Skeleton } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
+import { BarChart } from '../components/BarChart.jsx'
+import { mockBarData } from '../data/mockData.js'
 
 const getData = async () => {
   await new Promise((r) => setTimeout(r, 1000))
-  return 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error eveniet fugiat in iste laboriosam neque nostrum perspiciatis similique? Architecto ducimus earum ipsam iure, minima non odit omnis porro quae rerum.'
+  return mockBarData
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -23,10 +25,16 @@ export const Component = () => {
       <Header title='Bar Chart' subtitle='Simple Bar Chart' />
       <Box mt={3}>
         <Suspense
-          fallback={<Skeleton variant='rectangular' width='100%' height={50} />}
+          fallback={
+            <Skeleton variant='rectangular' width='100%' height='75vh' />
+          }
         >
           <Await resolve={deferred.data}>
-            {(data) => <Typography>{data}</Typography>}
+            {(data) => (
+              <Box height='75vh'>
+                <BarChart data={data} />
+              </Box>
+            )}
           </Await>
         </Suspense>
       </Box>
