@@ -50,4 +50,4 @@ export const Component = () => {
   )
 }
 
-Component.displayName = 'Bar'
+Component.displayName = 'Pie'
