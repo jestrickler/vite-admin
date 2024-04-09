@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import {
@@ -48,6 +48,11 @@ export const loader = async () => defer({ data: getData() })
 
 export const Component = () => {
   let deferred = useLoaderData()
+  const [expanded, setExpanded] = useState(false)
+
+  const handleChange = (id) => (event, isExpanded) => {
+    setExpanded(isExpanded ? id : false)
+  }
 
   return (
     <>
@@ -61,8 +66,8 @@ export const Component = () => {
             <>
               {[...Array(5).keys()].map((item) => (
                 <Box key={item}>
-                  <Skeleton variant='h4' width={250} sx={{ mt: 6 }} />
-                  <Skeleton width={800} sx={{ mt: 4 }} />
+                  <Skeleton variant='h4' width={250} sx={{ mt: 4 }} />
+                  {/*<Skeleton width={800} sx={{ mt: 4 }} />*/}
                 </Box>
               ))}
             </>
@@ -71,7 +76,11 @@ export const Component = () => {
           <Await resolve={deferred.data}>
             {(data) =>
               data.map((item) => (
-                <Accordion key={item.id} defaultExpanded>
+                <Accordion
+                  key={item.id}
+                  expanded={expanded === item.id}
+                  onChange={handleChange(item.id)}
+                >
                   <AccordionSummary expandIcon={<ExpandMore />} sx={{ px: 0 }}>
                     <Typography
                       variant='h4'
