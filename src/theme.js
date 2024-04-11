@@ -13,11 +13,11 @@ export const themeSettings = (mode) => {
               main: '#70d8bd'
             },
             secondary: {
-              main: '#ffa726'
+              main: '#535ac8'
             },
             background: {
               default: '#141b2d',
-              accent: '#37474f',
+              accent: '#1F2A40',
               contrast: '#e0e0e0'
             }
           }
@@ -27,7 +27,7 @@ export const themeSettings = (mode) => {
               main: '#1e5245'
             },
             secondary: {
-              main: '#ef6c00'
+              main: '#535ac8'
             },
             background: {
               default: '#fcfcfc',
