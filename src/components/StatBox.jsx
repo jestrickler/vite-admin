@@ -5,10 +5,12 @@ import { ProgressCircle } from './ProgressCircle'
 const StatBox = ({ title, subtitle, icon, progress, increase }) => (
   <Box
     width='100%'
+    height='100%'
     px={4}
     py={2}
     backgroundColor='background.accent'
     borderRadius={2}
+    align-items='center'
   >
     <Box display='flex' justifyContent='space-between'>
       <Box>
