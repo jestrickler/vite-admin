@@ -1,5 +1,5 @@
 import { defer } from 'react-router-dom'
-import { getContactsQuery } from './api.js'
+import { getContactsQuery } from '../api/api.js'
 
 export const loader = async ({ queryClient }) => {
   return defer({

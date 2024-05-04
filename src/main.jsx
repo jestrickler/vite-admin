@@ -24,8 +24,22 @@ const router = createBrowserRouter(
         }}
         lazy={() => import('./team/Team.jsx')}
       />
-      <Route path='contacts' lazy={() => import('./pages/Contacts.jsx')} />
-      <Route path='invoices' lazy={() => import('./pages/Invoices.jsx')} />
+      <Route
+        path='contacts'
+        loader={async () => {
+          let { loader } = await import('./contacts/contacts-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./contacts/Contacts.jsx')}
+      />
+      <Route
+        path='invoices'
+        loader={async () => {
+          let { loader } = await import('./invoices/invoices-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./invoices/Invoices.jsx')}
+      />
       <Route path='profile' lazy={() => import('./pages/Profile.jsx')} />
       <Route path='bar' lazy={() => import('./pages/Bar.jsx')} />
       <Route path='pie' lazy={() => import('./pages/Pie.jsx')} />

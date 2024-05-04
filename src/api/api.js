@@ -5,12 +5,14 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' }
 })
 
+const simulateNetworkDelay = async () =>
+  await new Promise((r) => setTimeout(r, 500))
+
 export const getEmployeesQuery = () => {
   return {
     queryKey: ['employees'],
     queryFn: async () => {
-      // simulate network slowness
-      await new Promise((r) => setTimeout(r, 1000))
+      await simulateNetworkDelay()
       return api.get('/employees').then((response) => response.data)
     }
   }
@@ -20,8 +22,7 @@ export const getContactsQuery = () => {
   return {
     queryKey: ['contacts'],
     queryFn: async () => {
-      // simulate network slowness
-      await new Promise((r) => setTimeout(r, 1000))
+      await simulateNetworkDelay()
       return api.get('/contacts').then((response) => response.data)
     }
   }
@@ -31,8 +32,7 @@ export const getInvoicesQuery = () => {
   return {
     queryKey: ['invoices'],
     queryFn: async () => {
-      // simulate network slowness
-      await new Promise((r) => setTimeout(r, 1000))
+      await simulateNetworkDelay()
       return api.get('/invoices').then((response) => response.data)
     }
   }
