@@ -45,7 +45,14 @@ const router = createBrowserRouter(
       <Route path='pie' lazy={() => import('./pages/Pie.jsx')} />
       <Route path='line' lazy={() => import('./pages/Line.jsx')} />
       <Route path='faq' lazy={() => import('./pages/Faq.jsx')} />
-      <Route path='calendar' lazy={() => import('./pages/Calendar.jsx')} />
+      <Route
+        path='calendar'
+        loader={async () => {
+          let { loader } = await import('./calendar/calendar-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./calendar/Calendar.jsx')}
+      />
       <Route path='geography' lazy={() => import('./pages/Geography.jsx')} />
     </Route>
   )
