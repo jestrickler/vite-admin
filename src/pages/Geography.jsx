@@ -1,5 +1,4 @@
 import { Suspense } from 'react'
-import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import { Box, Skeleton } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
@@ -19,9 +18,6 @@ export const Component = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Geography Chart - Adminis</title>
-      </Helmet>
       <Header title='Geography Chart' subtitle='Simple Geography Chart' />
       <Box mt={3}>
         <Suspense

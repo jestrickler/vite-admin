@@ -1,5 +1,4 @@
 import { Suspense, useState } from 'react'
-import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import {
   Accordion,
@@ -56,9 +55,6 @@ export const Component = () => {
 
   return (
     <>
-      <Helmet>
-        <title>FAQ - Adminis</title>
-      </Helmet>
       <Header title='FAQ' subtitle='Frequently Asked Questions' />
       <Box mt={3}>
         <Suspense

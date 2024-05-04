@@ -1,5 +1,4 @@
 import { Header } from './Header.jsx'
-import { Helmet } from 'react-helmet'
 import {
   Alert,
   AlertTitle,
@@ -68,9 +67,6 @@ export const Component = () => {
 
   return (
     <>
-      <Helmet>
-        <title>User Profile - Adminis</title>
-      </Helmet>
       <Header title='User Profile' subtitle='Create a New User Profile' />
       <Box mt={3}>
         {Object.keys(errors).length > 0 && (

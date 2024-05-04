@@ -1,5 +1,4 @@
 import { Suspense } from 'react'
-import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import { Await, defer, useLoaderData } from 'react-router-dom'
 import { Box, Skeleton, Stack } from '@mui/material'
@@ -38,9 +37,6 @@ export const Component = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contacts - Adminis</title>
-      </Helmet>
       <Header title='Contacts' subtitle='Manage Your Contacts' />
       <Box mt={3}>
         <Suspense

@@ -1,5 +1,4 @@
 import { Suspense, useState } from 'react'
-import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import {
   Box,
@@ -69,9 +68,6 @@ export const Component = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Calendar - Adminis</title>
-      </Helmet>
       <Header title='Calendar' subtitle='Your Interactive Calendar' />
       <Box mt={3}>
         <Suspense

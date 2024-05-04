@@ -1,5 +1,4 @@
 import { Suspense } from 'react'
-import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import { Box, Skeleton } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
@@ -19,9 +18,6 @@ export const Component = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Line Chart - Adminis</title>
-      </Helmet>
       <Header title='Line Chart' subtitle='Simple Line Chart' />
       <Box mt={3}>
         <Suspense

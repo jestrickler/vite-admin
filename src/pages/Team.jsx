@@ -1,5 +1,4 @@
 import { Suspense } from 'react'
-import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import { Await, defer, useLoaderData } from 'react-router-dom'
 import { Box, Chip, Skeleton, Stack } from '@mui/material'
@@ -58,9 +57,6 @@ export const Component = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Team - Adminis</title>
-      </Helmet>
       <Header title='Team' subtitle='Manage Your Team Members' />
       <Box mt={3}>
         <Suspense

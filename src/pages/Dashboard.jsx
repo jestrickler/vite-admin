@@ -1,5 +1,4 @@
 import { Suspense } from 'react'
-import { Helmet } from 'react-helmet'
 import { Header } from './Header.jsx'
 import {
   Box,
@@ -98,9 +97,6 @@ export const Component = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Dashboard - Adminis</title>
-      </Helmet>
       <Box display='flex' justifyContent='space-between' alignItems='flex-end'>
         <Header title='Dashboard' subtitle='Welcome to your dashboard' />
         <Button
