@@ -1,8 +1,8 @@
 import { defer } from 'react-router-dom'
-import { getEmployeesQuery } from './api.js'
+import { getContactsQuery } from './api.js'
 
 export const loader = async ({ queryClient }) => {
   return defer({
-    response: queryClient.ensureQueryData(getEmployeesQuery())
+    response: queryClient.ensureQueryData(getContactsQuery())
   })
 }

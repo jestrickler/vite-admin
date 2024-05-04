@@ -7,7 +7,7 @@ import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined'
 import { TableSkeleton } from '../skeletons/TableSkeleton.jsx'
-import { getTeamQuery } from '../api/api.js'
+import { getEmployeesQuery } from '../api/api.js'
 import { useSuspenseQuery } from '@tanstack/react-query'
 
 const columns = [
@@ -47,7 +47,7 @@ const columns = [
 ]
 
 const TeamGrid = () => {
-  const { data } = useSuspenseQuery(getTeamQuery())
+  const { data } = useSuspenseQuery(getEmployeesQuery())
   return (
     <DataGrid rows={data} columns={columns} sx={{ fontSize: 'h4.fontSize' }} />
   )

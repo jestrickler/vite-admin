@@ -273,6 +273,45 @@
       "date": "05/02/2021"
     }
   ],
+  "events": [
+    {
+      "id": "1",
+      "title": "All-day event",
+      "date": "2024-04-14"
+    },
+    {
+      "id": "2",
+      "title": "Timed event",
+      "date": "2024-04-28"
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "q": "An Important Question",
+      "a": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aut laboriosam molestiae numquam quis! Deserunt dicta."
+    },
+    {
+      "id": 2,
+      "q": "Another Important Question",
+      "a": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto, cumque harum illo inventore."
+    },
+    {
+      "id": 3,
+      "q": "Your Favorite Question",
+      "a": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci architecto beatae cum, eaque in itaque maiores maxime."
+    },
+    {
+      "id": 4,
+      "q": "Some Random Question",
+      "a": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at consequatur corporis cupiditate delectus."
+    },
+    {
+      "id": 5,
+      "q": "The Final Question",
+      "a": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, nisi quam? Adipisci asperiores atque dicta eligendi est, explicabo, inventore."
+    }
+  ],
   "transactions": [
     {
       "txId": "01e4dsa",
