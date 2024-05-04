@@ -3,7 +3,7 @@ import { Header } from '../pages/Header.jsx'
 import { Box } from '@mui/material'
 import { Await, useLoaderData } from 'react-router-dom'
 import { CalendarSkeleton } from '../skeletons/CalendarSkeleton.jsx'
-import { EventsCalendar } from './EventsCalendar.jsx'
+import { CalendarView } from './CalendarView.jsx'
 
 export const Component = () => {
   let deferred = useLoaderData()
@@ -14,7 +14,7 @@ export const Component = () => {
       <Box mt={3}>
         <Suspense fallback={<CalendarSkeleton />}>
           <Await resolve={deferred.data}>
-            <EventsCalendar />
+            <CalendarView />
           </Await>
         </Suspense>
       </Box>

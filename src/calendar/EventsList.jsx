@@ -2,12 +2,12 @@ import PropTypes from 'prop-types'
 import { Box, List, ListItem, ListItemText, Typography } from '@mui/material'
 import { formatDate } from '@fullcalendar/core'
 
-const EventsList = ({ currentEvents }) => {
+const EventsList = ({ events }) => {
   return (
     <Box flex='1 1 20%' backgroundColor='background.accent' p={2}>
       <Typography variant='h2'>Events</Typography>
       <List>
-        {currentEvents.map((event) => (
+        {events.map((event) => (
           <ListItem
             key={event.id}
             sx={{
@@ -40,7 +40,7 @@ const EventsList = ({ currentEvents }) => {
 }
 
 EventsList.propTypes = {
-  currentEvents: PropTypes.arrayOf(
+  events: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
