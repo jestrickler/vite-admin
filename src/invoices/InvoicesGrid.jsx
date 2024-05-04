@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { getInvoicesQuery } from '../api/api.js'
+import { getInvoicesQuery } from '../api.js'
 import { DataGrid } from '@mui/x-data-grid/DataGrid'
 import { Typography } from '@mui/material'
 

@@ -2,19 +2,19 @@ import { Suspense } from 'react'
 import { Header } from '../Header.jsx'
 import { Box } from '@mui/material'
 import { Await, useLoaderData } from 'react-router-dom'
-import { CalendarSkeleton } from '../skeletons/CalendarSkeleton.jsx'
-import { CalendarView } from './CalendarView.jsx'
+import { BoxSkeleton } from '../skeletons/BoxSkeleton.jsx'
+import { BarView } from './BarView.jsx'
 
 export const Component = () => {
   let deferred = useLoaderData()
 
   return (
     <>
-      <Header title='Calendar' subtitle='Your Interactive Calendar' />
+      <Header title='Bar Chart' subtitle='Simple Bar Chart' />
       <Box mt={3}>
-        <Suspense fallback={<CalendarSkeleton />}>
+        <Suspense fallback={<BoxSkeleton />}>
           <Await resolve={deferred.data}>
-            <CalendarView />
+            <BarView />
           </Await>
         </Suspense>
       </Box>
@@ -22,4 +22,4 @@ export const Component = () => {
   )
 }
 
-Component.displayName = 'Calendar'
+Component.displayName = 'Bar'

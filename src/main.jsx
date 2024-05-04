@@ -15,7 +15,7 @@ const queryClient = new QueryClient()
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-      <Route index lazy={() => import('./pages/Dashboard.jsx')} />
+      <Route index lazy={() => import('./dashboard/Dashboard.jsx')} />
       <Route
         path='team'
         loader={async () => {
@@ -40,11 +40,39 @@ const router = createBrowserRouter(
         }}
         lazy={() => import('./invoices/Invoices.jsx')}
       />
-      <Route path='profile' lazy={() => import('./pages/Profile.jsx')} />
-      <Route path='bar' lazy={() => import('./pages/Bar.jsx')} />
-      <Route path='pie' lazy={() => import('./pages/Pie.jsx')} />
-      <Route path='line' lazy={() => import('./pages/Line.jsx')} />
-      <Route path='faq' lazy={() => import('./pages/Faq.jsx')} />
+      <Route path='profile' lazy={() => import('./profile/Profile.jsx')} />
+      <Route
+        path='bar'
+        loader={async () => {
+          let { loader } = await import('./bar/bar-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./bar/Bar.jsx')}
+      />
+      <Route
+        path='pie'
+        loader={async () => {
+          let { loader } = await import('./pie/pie-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./pie/Pie.jsx')}
+      />
+      <Route
+        path='line'
+        loader={async () => {
+          let { loader } = await import('./line/line-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./line/Line.jsx')}
+      />
+      <Route
+        path='faq'
+        loader={async () => {
+          let { loader } = await import('./faq/faq-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./faq/Faq.jsx')}
+      />
       <Route
         path='calendar'
         loader={async () => {
@@ -53,7 +81,14 @@ const router = createBrowserRouter(
         }}
         lazy={() => import('./calendar/Calendar.jsx')}
       />
-      <Route path='geography' lazy={() => import('./pages/Geography.jsx')} />
+      <Route
+        path='geography'
+        loader={async () => {
+          let { loader } = await import('./geography/geography-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./geography/Geography.jsx')}
+      />
     </Route>
   )
 )

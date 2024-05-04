@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Header } from './Header.jsx'
+import { Header } from '../Header.jsx'
 import { Box, Button, Chip, Grid, IconButton, Typography } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
 import { StatBox } from '../components/StatBox.jsx'
@@ -16,7 +16,7 @@ import {
   mockGeographyData,
   mockLineData,
   mockTransactions
-} from '../data/mockData.js'
+} from './mockData.js'
 import { ProgressCircle } from '../components/ProgressCircle.jsx'
 import { BarChart } from '../components/BarChart.jsx'
 import { GeographyChart } from '../components/GeographyChart.jsx'

@@ -2,19 +2,19 @@ import { Suspense } from 'react'
 import { Header } from '../Header.jsx'
 import { Box } from '@mui/material'
 import { Await, useLoaderData } from 'react-router-dom'
-import { CalendarSkeleton } from '../skeletons/CalendarSkeleton.jsx'
-import { CalendarView } from './CalendarView.jsx'
+import { CircleSkeleton } from '../skeletons/CircleSkeleton.jsx'
+import { PieView } from './PieView.jsx'
 
 export const Component = () => {
   let deferred = useLoaderData()
 
   return (
     <>
-      <Header title='Calendar' subtitle='Your Interactive Calendar' />
+      <Header title='Pie Chart' subtitle='Simple Pie Chart' />
       <Box mt={3}>
-        <Suspense fallback={<CalendarSkeleton />}>
+        <Suspense fallback={<CircleSkeleton />}>
           <Await resolve={deferred.data}>
-            <CalendarView />
+            <PieView />
           </Await>
         </Suspense>
       </Box>
@@ -22,4 +22,4 @@ export const Component = () => {
   )
 }
 
-Component.displayName = 'Calendar'
+Component.displayName = 'Pie'

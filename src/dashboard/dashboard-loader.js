@@ -1,5 +1,5 @@
 import { defer } from 'react-router-dom'
-import { getTransactionsQuery } from './api.js'
+import { getTransactionsQuery } from '../api.js'
 
 export const loader = async ({ queryClient }) => {
   return defer({

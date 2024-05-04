@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { getEmployeesQuery } from '../api/api.js'
+import { getEmployeesQuery } from '../api.js'
 import { DataGrid } from '@mui/x-data-grid/DataGrid'
 import { Chip } from '@mui/material'
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined.js'

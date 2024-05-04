@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from '@tanstack/react-query'
-import { getContactsQuery } from '../api/api.js'
+import { getContactsQuery } from '../api.js'
 import { DataGrid } from '@mui/x-data-grid/DataGrid'
 
 const columns = [

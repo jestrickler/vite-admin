@@ -1,20 +1,20 @@
 import { Suspense } from 'react'
 import { Header } from '../Header.jsx'
-import { Await, useLoaderData } from 'react-router-dom'
 import { Box } from '@mui/material'
+import { Await, useLoaderData } from 'react-router-dom'
 import { TableSkeleton } from '../skeletons/TableSkeleton.jsx'
-import { InvoicesGrid } from './InvoicesGrid.jsx'
+import { FaqView } from './FaqView.jsx'
 
 export const Component = () => {
   let deferred = useLoaderData()
 
   return (
     <>
-      <Header title='Invoices' subtitle='List of Invoice Balances' />
+      <Header title='FAQ' subtitle='Frequently Asked Questions' />
       <Box mt={3}>
-        <Suspense fallback={<TableSkeleton />}>
+        <Suspense fallback={<TableSkeleton rows={5} />}>
           <Await resolve={deferred.data}>
-            <InvoicesGrid />
+            <FaqView />
           </Await>
         </Suspense>
       </Box>
@@ -22,4 +22,4 @@ export const Component = () => {
   )
 }
 
-Component.displayName = 'Invoices'
+Component.displayName = 'Faq'
