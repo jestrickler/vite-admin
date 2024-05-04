@@ -19,10 +19,10 @@ const router = createBrowserRouter(
       <Route
         path='team'
         loader={async () => {
-          let { loader } = await import('./api/team-loader')
+          let { loader } = await import('./team/team-loader.js')
           return loader({ queryClient })
         }}
-        lazy={() => import('./pages/Team.jsx')}
+        lazy={() => import('./team/Team.jsx')}
       />
       <Route path='contacts' lazy={() => import('./pages/Contacts.jsx')} />
       <Route path='invoices' lazy={() => import('./pages/Invoices.jsx')} />

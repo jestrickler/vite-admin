@@ -1,14 +1,10 @@
-import { Suspense } from 'react'
-import { Header } from './Header.jsx'
-import { Await, useLoaderData } from 'react-router-dom'
-import { Box, Chip } from '@mui/material'
-import { DataGrid } from '@mui/x-data-grid/DataGrid'
-import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined'
-import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
-import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined'
-import { TableSkeleton } from '../skeletons/TableSkeleton.jsx'
-import { getEmployeesQuery } from '../api/api.js'
 import { useSuspenseQuery } from '@tanstack/react-query'
+import { getEmployeesQuery } from '../api/api.js'
+import { DataGrid } from '@mui/x-data-grid/DataGrid'
+import { Chip } from '@mui/material'
+import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined.js'
+import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined.js'
+import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined.js'
 
 const columns = [
   { field: 'name', headerName: 'Name', flex: 2 },
@@ -53,21 +49,4 @@ const TeamGrid = () => {
   )
 }
 
-export const Component = () => {
-  let deferred = useLoaderData()
-
-  return (
-    <>
-      <Header title='Team' subtitle='Manage Your Team Members' />
-      <Box mt={3}>
-        <Suspense fallback={<TableSkeleton />}>
-          <Await resolve={deferred.response}>
-            <TeamGrid />
-          </Await>
-        </Suspense>
-      </Box>
-    </>
-  )
-}
-
-Component.displayName = 'Team'
+export { TeamGrid }
