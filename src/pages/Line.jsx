@@ -1,9 +1,10 @@
 import { Suspense } from 'react'
 import { Header } from './Header.jsx'
-import { Box, Skeleton } from '@mui/material'
+import { Box } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
 import { LineChart } from '../components/LineChart.jsx'
 import { mockLineData } from '../data/mockData.js'
+import { BoxSkeleton } from '../skeletons/BoxSkeleton.jsx'
 
 const getData = async () => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -20,11 +21,7 @@ export const Component = () => {
     <>
       <Header title='Line Chart' subtitle='Simple Line Chart' />
       <Box mt={3}>
-        <Suspense
-          fallback={
-            <Skeleton variant='rectangular' width='100%' height='75vh' />
-          }
-        >
+        <Suspense fallback={<BoxSkeleton />}>
           <Await resolve={deferred.data}>
             {(data) => (
               <Box height='75vh'>

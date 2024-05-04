@@ -1,20 +1,14 @@
 import { Suspense } from 'react'
 import { Header } from './Header.jsx'
-import { Await, defer, useLoaderData } from 'react-router-dom'
-import { Box, Chip, Skeleton, Stack } from '@mui/material'
+import { Await, useLoaderData } from 'react-router-dom'
+import { Box, Chip } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid/DataGrid'
 import AdminPanelSettingsOutlinedIcon from '@mui/icons-material/AdminPanelSettingsOutlined'
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined'
 import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined'
-import { mockDataTeam } from '../data/mockData.js'
-
-const getData = async () => {
-  await new Promise((r) => setTimeout(r, 1000))
-  return mockDataTeam
-}
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const loader = async () => defer({ data: getData() })
+import { TableSkeleton } from '../skeletons/TableSkeleton.jsx'
+import { getTeamQuery } from '../api/api.js'
+import { useSuspenseQuery } from '@tanstack/react-query'
 
 const columns = [
   { field: 'name', headerName: 'Name', flex: 2 },
@@ -52,6 +46,13 @@ const columns = [
   }
 ]
 
+const TeamGrid = () => {
+  const { data } = useSuspenseQuery(getTeamQuery())
+  return (
+    <DataGrid rows={data} columns={columns} sx={{ fontSize: 'h4.fontSize' }} />
+  )
+}
+
 export const Component = () => {
   let deferred = useLoaderData()
 
@@ -59,28 +60,9 @@ export const Component = () => {
     <>
       <Header title='Team' subtitle='Manage Your Team Members' />
       <Box mt={3}>
-        <Suspense
-          fallback={
-            <Stack spacing={1}>
-              {[...Array(10).keys()].map((item) => (
-                <Skeleton
-                  key={item}
-                  variant='rectangular'
-                  width='100%'
-                  height={50}
-                />
-              ))}
-            </Stack>
-          }
-        >
-          <Await resolve={deferred.data}>
-            {(data) => (
-              <DataGrid
-                rows={data}
-                columns={columns}
-                sx={{ fontSize: 'h4.fontSize' }}
-              />
-            )}
+        <Suspense fallback={<TableSkeleton />}>
+          <Await resolve={deferred.response}>
+            <TeamGrid />
           </Await>
         </Suspense>
       </Box>

@@ -1,14 +1,6 @@
 import { Suspense, useState } from 'react'
 import { Header } from './Header.jsx'
-import {
-  Box,
-  List,
-  ListItem,
-  ListItemText,
-  Skeleton,
-  Stack,
-  Typography
-} from '@mui/material'
+import { Box, List, ListItem, ListItemText, Typography } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
 import { formatDate } from '@fullcalendar/core'
 import FullCalendar from '@fullcalendar/react'
@@ -16,6 +8,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import listPlugin from '@fullcalendar/list'
+import { CalendarSkeleton } from '../skeletons/CalendarSkeleton.jsx'
 
 const getData = async () => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -70,14 +63,7 @@ export const Component = () => {
     <>
       <Header title='Calendar' subtitle='Your Interactive Calendar' />
       <Box mt={3}>
-        <Suspense
-          fallback={
-            <Stack direction='row' spacing={2}>
-              <Skeleton variant='rectangular' width='21%' height='75vh' />
-              <Skeleton variant='rectangular' width='100%' height='75vh' />
-            </Stack>
-          }
-        >
+        <Suspense fallback={<CalendarSkeleton />}>
           <Await resolve={deferred.data}>
             {(data) => (
               <Box display='flex' justifyContent='space-between'>

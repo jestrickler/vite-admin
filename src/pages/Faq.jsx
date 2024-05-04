@@ -5,11 +5,11 @@ import {
   AccordionDetails,
   AccordionSummary,
   Box,
-  Skeleton,
   Typography
 } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
 import { ExpandMore } from '@mui/icons-material'
+import { TableSkeleton } from '../skeletons/TableSkeleton.jsx'
 
 const getData = async () => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -57,18 +57,7 @@ export const Component = () => {
     <>
       <Header title='FAQ' subtitle='Frequently Asked Questions' />
       <Box mt={3}>
-        <Suspense
-          fallback={
-            <>
-              {[...Array(5).keys()].map((item) => (
-                <Box key={item}>
-                  <Skeleton variant='h4' width={250} sx={{ mt: 4 }} />
-                  {/*<Skeleton width={800} sx={{ mt: 4 }} />*/}
-                </Box>
-              ))}
-            </>
-          }
-        >
+        <Suspense fallback={<TableSkeleton rows={5} />}>
           <Await resolve={deferred.data}>
             {(data) =>
               data.map((item) => (

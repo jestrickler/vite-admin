@@ -1,9 +1,10 @@
 import { Suspense } from 'react'
 import { Header } from './Header.jsx'
 import { Await, defer, useLoaderData } from 'react-router-dom'
-import { Box, Skeleton, Stack, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid/DataGrid'
 import { mockDataInvoices } from '../data/mockData.js'
+import { TableSkeleton } from '../skeletons/TableSkeleton.jsx'
 
 const getData = async () => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -33,20 +34,7 @@ export const Component = () => {
     <>
       <Header title='Invoices' subtitle='List of Invoice Balances' />
       <Box mt={3}>
-        <Suspense
-          fallback={
-            <Stack spacing={1}>
-              {[...Array(10).keys()].map((item) => (
-                <Skeleton
-                  key={item}
-                  variant='rectangular'
-                  width='100%'
-                  height={50}
-                />
-              ))}
-            </Stack>
-          }
-        >
+        <Suspense fallback={<TableSkeleton />}>
           <Await resolve={deferred.data}>
             {(data) => (
               <DataGrid

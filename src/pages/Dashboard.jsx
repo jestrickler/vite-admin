@@ -1,14 +1,6 @@
 import { Suspense } from 'react'
 import { Header } from './Header.jsx'
-import {
-  Box,
-  Button,
-  Chip,
-  Grid,
-  IconButton,
-  Skeleton,
-  Typography
-} from '@mui/material'
+import { Box, Button, Chip, Grid, IconButton, Typography } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
 import { StatBox } from '../components/StatBox.jsx'
 import {
@@ -28,6 +20,7 @@ import {
 import { ProgressCircle } from '../components/ProgressCircle.jsx'
 import { BarChart } from '../components/BarChart.jsx'
 import { GeographyChart } from '../components/GeographyChart.jsx'
+import { DashboardSkeleton } from '../skeletons/DashboardSkeleton.jsx'
 
 const getData = async () => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -108,28 +101,7 @@ export const Component = () => {
         </Button>
       </Box>
       <Box mt={3}>
-        <Suspense
-          fallback={
-            <Grid container spacing={2}>
-              {[...Array(4).keys()].map((item) => (
-                <Grid key={item} item xs={3}>
-                  <Skeleton variant='rectangular' width='100%' height={115} />
-                </Grid>
-              ))}
-              <Grid item xs={8}>
-                <Skeleton variant='rectangular' width='100%' height={275} />
-              </Grid>
-              <Grid item xs={4}>
-                <Skeleton variant='rectangular' width='100%' height={275} />
-              </Grid>
-              {[...Array(3).keys()].map((item) => (
-                <Grid key={item} item xs={4}>
-                  <Skeleton variant='rectangular' width='100%' height={270} />
-                </Grid>
-              ))}
-            </Grid>
-          }
-        >
+        <Suspense fallback={<DashboardSkeleton />}>
           <Await resolve={deferred.data}>
             {(data) => (
               <Grid container spacing={2}>

@@ -1,9 +1,10 @@
 import { Suspense } from 'react'
 import { Header } from './Header.jsx'
-import { Box, Skeleton } from '@mui/material'
+import { Box } from '@mui/material'
 import { Await, defer, useLoaderData } from 'react-router-dom'
 import { PieChart } from '../components/PieChart.jsx'
 import { mockPieData } from '../data/mockData.js'
+import { CircleSkeleton } from '../skeletons/CircleSkeleton.jsx'
 
 const getData = async () => {
   await new Promise((r) => setTimeout(r, 1000))
@@ -20,19 +21,7 @@ export const Component = () => {
     <>
       <Header title='Pie Chart' subtitle='Simple Pie Chart' />
       <Box mt={3}>
-        <Suspense
-          fallback={
-            <Box
-              width='100%'
-              height='75vh'
-              display='flex'
-              alignItems='center'
-              justifyContent='center'
-            >
-              <Skeleton variant='circular' width={600} height={600} />
-            </Box>
-          }
-        >
+        <Suspense fallback={<CircleSkeleton />}>
           <Await resolve={deferred.data}>
             {(data) => (
               <Box height='75vh'>
