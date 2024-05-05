@@ -98,12 +98,12 @@ export const getGeographyQuery = () => {
   }
 }
 
-export const getTransactionsQuery = () => {
+export const getDashboardQuery = () => {
   return {
-    queryKey: ['transactions'],
+    queryKey: ['dashboardData'],
     queryFn: async () => {
       await simulateNetworkDelay()
-      return api.get('/transactions').then((response) => response.data)
+      return api.get('/dashboardData').then((response) => response.data)
     }
   }
 }

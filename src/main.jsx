@@ -15,7 +15,14 @@ const queryClient = new QueryClient()
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-      <Route index lazy={() => import('./dashboard/Dashboard.jsx')} />
+      <Route
+        index
+        loader={async () => {
+          let { loader } = await import('./dashboard/dashboard-loader.js')
+          return loader({ queryClient })
+        }}
+        lazy={() => import('./dashboard/Dashboard.jsx')}
+      />
       <Route
         path='team'
         loader={async () => {
