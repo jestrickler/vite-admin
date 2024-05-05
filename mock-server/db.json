@@ -1524,7 +1524,8 @@
     "campaign": {
       "title": "Campaign",
       "subtitle": "$48,352 revenue generated",
-      "details": "Includes extra misc expenditures and costs"
+      "details": "Includes extra misc expenditures and costs",
+      "size": 125
     },
     "sales": {
       "title": "Sales Quantity",
