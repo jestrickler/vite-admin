@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Header } from '../Header.jsx'
+import { Header } from '../components/Header.jsx'
 import { Box } from '@mui/material'
 import { Await, useLoaderData } from 'react-router-dom'
 import { CircleSkeleton } from '../skeletons/CircleSkeleton.jsx'
