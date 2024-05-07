@@ -5,12 +5,12 @@ import PropTypes from 'prop-types'
 const CampaignGraph = ({ campaign }) => (
   <Grid item xs={4}>
     <Box p={2} backgroundColor='background.accent' height={270}>
-      <Typography variant='h5' fontWeight='600'>
+      <Typography variant='h5' component='h2' fontWeight='600'>
         {campaign.title}
       </Typography>
       <Box display='flex' flexDirection='column' alignItems='center' mt={2}>
         <ProgressCircle size={campaign.size} />
-        <Typography variant='h5' color='primary.main' mt={2}>
+        <Typography variant='h5' component='div' color='primary.main' mt={2}>
           {campaign.subtitle}
         </Typography>
         <Typography>{campaign.details}</Typography>

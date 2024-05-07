@@ -9,7 +9,7 @@ const RevenueGraph = ({ revenue }) => {
       <Box p={2} backgroundColor='background.accent' height={275}>
         <Box display='flex ' justifyContent='space-between' alignItems='center'>
           <Box>
-            <Typography variant='h5' component='div'>
+            <Typography variant='h5' component='h2'>
               {revenue.title}
             </Typography>
             <Typography variant='h3' component='div' color='primary.main'>

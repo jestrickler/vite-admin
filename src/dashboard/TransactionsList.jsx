@@ -6,7 +6,7 @@ const TransactionsList = ({ transactions }) => (
     <Box p={2} backgroundColor='background.accent' height={275} overflow='auto'>
       <Typography
         variant='h5'
-        component='div'
+        component='h2'
         pb={2}
         borderBottom={1}
         borderColor='primary.main'
